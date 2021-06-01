@@ -17,7 +17,7 @@
 			print ($resultado = $_POST ["valor1"] / $_POST ["valor2"]);
 			print ('<br /><a href="calculadora.php">Volver</a>');
 		}
-	} else {
+	} else { 
 		print("Ingresa alg&uacute;n valor");
 		print ('<br /><a href="calculadora.php">Volver</a>');
 	}
