@@ -3,99 +3,44 @@
     <title>index de trabajos</title>
   </head>
   <body>
-    <center><h2> tablas del 1 al 10</h2></center>
-	  <table border="1" align="center" style="font-size: 25;" bgcolor="white">
-       <?php
-            echo "<tr>";
-            for ($cabecera="0";$cabecera<=10;$cabecera++){
-                        echo "<th>";
-                        echo "<td>$cabecera</td>";
-                        echo "</th>";
-            }
-            echo "</tr>";
-            for ($x = 1; $x <=10; $x++){
-                       echo "<tr>";
-                       echo "<th>$x</th>";
-                            for ($y=1;$y<=10;$y++){                      
-                                    
-                                   switch ($x) {
-                                   	case '1':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='red'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>"; 
-                                   		break;
-                                   	case '2':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='blue'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '3':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='green'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	 case '4':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='red'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '5':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='blue'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '6':
-                                   		echo "<th >";
-                                   		 $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='green'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '7':
-                                   		echo "<th>";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='red'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '8':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='blue'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   	case '9':
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='green'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-
-                                   	default:
-                                   		echo "<th >";
-                                   		  $multiplicacion=$x*$y;                   
-                                    echo "<td bgcolor='red'>";                      
-                                    echo $multiplicacion;                      
-                                    echo "</td>";    
-                                   		break;
-                                   }
-                                            
-                            }              
-                    echo "</th>";          
-          }          
-     ?>      
+    <h1 >Calculadora</h1>
+		<form action="calculadora.php" method="post">
+			<select name="operador">
+				<option value="suma">Suma</option>
+				<option value="resta">Resta</option>
+				<option value="multiplicacion">Multiplicaci&oacute;n</option>
+				<option value="division">Divisi&oacute;n</option>
+			</select><br />
+			Ingresa tu primer n&uacute;mero:<br />
+			<input type="text" name="valor1"value="0"><br />
+			Ingresa tu segundo valor:<br />
+			<input type="text" name="valor2" value="0"><br>
+			<input type="reset" value="Borrar">
+			<input type="submit" value="Enviar">
+		</form>
+		<?php 
+	if ($_POST ["valor1"] !="" and $_POST ["valor2"]!=""){
+		if ($_POST["operador"] == "suma") {
+			print ($resultado = $_POST ["valor1"] + $_POST ["valor2"]);
+			print ('<br /><a href="calculadora.php">Volver</a>');
+		} 
+		elseif ($_POST["operador"] == "resta") {
+			print ($resultado = $_POST ["valor1"] - $_POST ["valor2"]);
+			print ('<br /><a href="calculadora.php">Volver</a>');
+		}
+		 elseif ($_POST["operador"] == "multiplicacion") {
+			print ($resultado = $_POST ["valor1"] * $_POST ["valor2"]);
+			print ('<br /><a href="calculadora.php">Volver</a>');
+		} 
+		elseif ($_POST["operador"] == "division") {
+			print ($resultado = $_POST ["valor1"] / $_POST ["valor2"]);
+			print ('<br /><a href="calculadora.php">Volver</a>');
+		}
+	} else {
+		print("Ingresa alg&uacute;n valor");
+		print ('<br /><a href="calculadora.php">Volver</a>');
+	}
+?>    
     </table>
     <h5>por tadeo cordova</h5>
   </body>
