@@ -4,7 +4,7 @@
   </head>
   <body>
     <h1 >Calculadora</h1>
-		<form action="index.html" method="post">
+		<form action="https://silly-saha-0c7504.netlify.app/" method="post">
 			<select name="operador">
 				<option value="suma">Suma</option>
 				<option value="resta">Resta</option>
@@ -22,23 +22,23 @@
 	if ($_POST ["valor1"] !="" and $_POST ["valor2"]!=""){
 		if ($_POST["operador"] == "suma") {
 			print ($resultado = $_POST ["valor1"] + $_POST ["valor2"]);
-			print ('<br /><a href="index.html">Volver</a>');
+			print ('<br /><a href="https://silly-saha-0c7504.netlify.app/">Volver</a>');
 		} 
 		elseif ($_POST["operador"] == "resta") {
 			print ($resultado = $_POST ["valor1"] - $_POST ["valor2"]);
-			print ('<br /><a href="index.html">Volver</a>');
+			print ('<br /><a href="https://silly-saha-0c7504.netlify.app/">Volver</a>');
 		}
 		 elseif ($_POST["operador"] == "multiplicacion") {
 			print ($resultado = $_POST ["valor1"] * $_POST ["valor2"]);
-			print ('<br /><a href="index.html">Volver</a>');
+			print ('<br /><a href="https://silly-saha-0c7504.netlify.app/">Volver</a>');
 		} 
 		elseif ($_POST["operador"] == "division") {
 			print ($resultado = $_POST ["valor1"] / $_POST ["valor2"]);
-			print ('<br /><a href="index.html">Volver</a>');
+			print ('<br /><a href="https://silly-saha-0c7504.netlify.app/">Volver</a>');
 		}
 	} else {
 		print("Ingresa alg&uacute;n valor");
-		print ('<br /><a href="index.html">Volver</a>');
+		print ('<br /><a href="https://silly-saha-0c7504.netlify.app/">Volver</a>');
 	}
 ?>    
     </table>
